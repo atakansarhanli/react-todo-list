@@ -1,23 +1,17 @@
 import Card from './components/card'
+import Header from './components/header'
+import Container from './components/container'
+import { Provider } from './components/context'
+import './App.css'
 
 function App() {
   return (
-    <div className='App' style={{ padding: '10px' }}>
-      <Card
-        title='Atakan'
-        sideTitle='?'
-        content='Alışveriş'
-        category='urgent'
-        createDate='3 min ago'
-      />
-      <Card
-        title='Atakan'
-        sideTitle='?'
-        content='Alışveriş'
-        category='none'
-        createDate='3 min ago'
-      />
-    </div>
+    <Provider>
+      <Header />
+      <div className='App' style={{ padding: '10px' }}>
+        <Container />
+      </div>
+    </Provider>
   )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Context } from '../context'
 function Card(props) {
   let cardLiteral = {
     none: 'grey',
@@ -7,10 +7,16 @@ function Card(props) {
     urgent: 'orange',
     critical: 'red',
   }
+  const context = React.useContext(Context)
   return (
     <div className={`ui card ${cardLiteral[props.category]}`}>
       <div className='content'>
-        <i className='right floated star icon'></i>
+        <i
+          className='right floated close icon close-icon'
+          onClick={() => {
+            context.removeOne(props.id)
+          }}
+        />
         <div className='header'>{props.title}</div>
         <div className='meta'>
           <span className='right floated time'>{props.sideTitle}</span>

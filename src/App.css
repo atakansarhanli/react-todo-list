@@ -1,0 +1,10 @@
+.create-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-icon:hover {
+  color: rgb(190, 0, 0);
+}
