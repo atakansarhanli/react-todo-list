@@ -1,10 +1,22 @@
-import './App.css'
+import Card from './components/card'
 
 function App() {
   return (
-    <div className='App'>
-      <button className='ui primary button'>Save</button>
-      <button className='ui button'>Discard</button>
+    <div className='App' style={{ padding: '10px' }}>
+      <Card
+        title='Atakan'
+        sideTitle='?'
+        content='Alışveriş'
+        category='urgent'
+        createDate='3 min ago'
+      />
+      <Card
+        title='Atakan'
+        sideTitle='?'
+        content='Alışveriş'
+        category='none'
+        createDate='3 min ago'
+      />
     </div>
   )
 }
