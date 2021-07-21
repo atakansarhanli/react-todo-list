@@ -7,26 +7,40 @@ function Header(props) {
 
   return (
     <div className='ui fluid container'>
-      <div className='ui large secondary pointing menu'>
-        <button
-          onClick={() => {
-            setShow(true)
-          }}
-          style={{ margin: 3 }}
-          className='ui orange icon button'
-        >
-          <i className='plus icon'></i>
-        </button>
+      <div className='ui small secondary pointing menu'>
+        <div className='item'>
+          <button
+            onClick={() => {
+              setShow(true)
+            }}
+            className='ui orange icon button'
+          >
+            <i className='plus icon' style={{ paddingRight: '20px' }}></i>
+            New Card
+          </button>
+        </div>
+
         <Modal show={show} setShow={setShow} />
-        <a className='active item'>Atakan's To-Do App</a>
-        <div className='right item'>
+        <div
+          style={{
+            fontSize: '20px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginRight: 'auto',
+            marginLeft: 'auto',
+          }}
+        >
+          Atakan's To-Do App
+        </div>
+        <div className='item'>
           <a
             className='ui red button'
             onClick={() => {
               context.removeAll()
             }}
           >
-            Exit
+            Clear All
           </a>
         </div>
       </div>

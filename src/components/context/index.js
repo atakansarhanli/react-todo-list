@@ -11,6 +11,7 @@ export class Provider extends React.Component {
     this.addData = this.addData.bind(this)
     this.removeAll = this.removeAll.bind(this)
     this.removeOne = this.removeOne.bind(this)
+    this.changeState = this.changeState.bind(this)
   }
 
   componentDidMount() {
@@ -42,6 +43,26 @@ export class Provider extends React.Component {
       }
     )
   }
+  changeState(id, delta) {
+    let copyArr = [...this.state.list]
+    let index = copyArr.findIndex((item) => {
+      return item.id == id
+    })
+    if (
+      delta + copyArr[index].durum <= 2 &&
+      delta + copyArr[index].durum >= 0
+    ) {
+      copyArr[index].durum = delta + copyArr[index].durum
+      this.setState(
+        {
+          list: copyArr,
+        },
+        () => {
+          localStorage.setItem('list', JSON.stringify(this.state.list))
+        }
+      )
+    }
+  }
   addData(element) {
     this.setState(
       (prevState) => {
@@ -63,6 +84,7 @@ export class Provider extends React.Component {
           addData: this.addData,
           removeAll: this.removeAll,
           removeOne: this.removeOne,
+          changeState: this.changeState,
         }}
       >
         {this.props.children}

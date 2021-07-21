@@ -1,3 +1,10 @@
+:root {
+  --primary: #edddd4;
+  --secondary: #fffffa;
+  --font-color: #e8eddf;
+  --dark-font-color: #333533;
+}
+
 .create-modal {
   position: absolute;
   top: 50%;
@@ -7,4 +14,31 @@
 
 .close-icon:hover {
   color: rgb(190, 0, 0);
+}
+
+.column-container {
+  padding: 4px !important;
+}
+
+.card-column {
+  min-height: 100vh;
+  background-color: var(--secondary);
+  padding-bottom: 30px;
+  padding: 17px !important;
+}
+
+.card-column-title {
+  text-transform: capitalize !important;
+  padding-top: 10px !important;
+  color: white !important;
+}
+
+.column-container {
+  display: flex;
+  justify-content: center !important;
+}
+
+.App {
+  background-color: var(--primary);
+  height: 100vh;
 }

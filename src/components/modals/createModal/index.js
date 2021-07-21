@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Select from 'react-select'
 import { Context } from '../../context'
 const options = [
@@ -14,11 +14,19 @@ function idGenerator() {
     return v.toString(16)
   })
 }
+
 function Modal(props) {
   const context = React.useContext(Context)
   const [konu, setKonu] = useState('')
   const [oncelik, setOncelik] = useState('')
   const [yapilicaklar, setYapilicaklar] = useState('')
+
+  useEffect(() => {
+    setKonu('')
+    setOncelik('')
+    setYapilicaklar('')
+  }, [props.show])
+
   if (props.show) {
     return (
       <div className='ui active tiny modal create-modal'>
@@ -79,6 +87,7 @@ function Modal(props) {
                 oncelik: oncelik.value,
                 yapilicaklar: yapilicaklar,
                 id: idGenerator(),
+                durum: 0,
               }
               context.addData(data)
               props.setShow(false)

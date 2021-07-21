@@ -1,23 +1,33 @@
 import React from 'react'
 import { Context } from '../context'
 import Card from '../card'
+import Column from '../column'
 function Container(props) {
   const context = React.useContext(Context)
   return (
-    <div>
-      {context.data &&
-        context.data.map((item) => {
-          return (
-            <Card
-              title={item.konu}
-              sideTitle='?'
-              content={item.yapilicaklar}
-              category={item.oncelik}
-              createDate='3 min ago'
-              id={item.id}
-            />
-          )
-        })}
+    <div className='ui container'>
+      <div class='ui grid'>
+        <div class='four column row column-container'>
+          <Column
+            data={context.data}
+            durum={0}
+            title={'yapilacaklar'}
+            bgColor={'#212d40'}
+          />
+          <Column
+            data={context.data}
+            durum={1}
+            title={'yapiliyor'}
+            bgColor={'#364156'}
+          />
+          <Column
+            data={context.data}
+            durum={2}
+            title={'tamamlanmis'}
+            bgColor={'#7d4e57'}
+          />
+        </div>
+      </div>
     </div>
   )
 }
