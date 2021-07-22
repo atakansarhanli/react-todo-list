@@ -32,4 +32,4 @@ function Container(props) {
   )
 }
 
-export default Container
+export default ConsumerHOC(Container)
