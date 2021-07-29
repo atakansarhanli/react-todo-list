@@ -11,19 +11,19 @@ function Container(props) {
           <Column
             data={context.data}
             durum={0}
-            title={'yapilacaklar'}
+            title={'YAPILACAKLAR'}
             bgColor={'#212d40'}
           />
           <Column
             data={context.data}
             durum={1}
-            title={'yapiliyor'}
+            title={'YAPILIYOR'}
             bgColor={'#364156'}
           />
           <Column
             data={context.data}
             durum={2}
-            title={'tamamlanmis'}
+            title={'TAMAMLANMIŞ'}
             bgColor={'#7d4e57'}
           />
         </div>
