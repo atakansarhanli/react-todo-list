@@ -19,7 +19,7 @@ function Card(props) {
         />
         <div className='header'>{props.title}</div>
         <div className='meta'>
-          <span className='right floated time'>{props.sideTitle}</span>s{' '}
+          <span className='right floated time'>{props.sideTitle}</span>
           <a class={`ui category ribbon label ${cardLiteral[props.category]}`}>
             {props.category}
           </a>
